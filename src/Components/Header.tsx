@@ -1,5 +1,10 @@
+import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 const Header = () => {
+  const [inputSearcher, setInputSearcher] = useState<string>("");
+  const setInputChange = (e: React.FormEvent<HTMLInputElement>) => {
+    setInputSearcher(e.currentTarget.value);
+  };
   return (
     <>
       <header className="headerMain">
@@ -11,6 +16,8 @@ const Header = () => {
                 type="text"
                 className="inputHeader"
                 placeholder="Search for an album artist or track"
+                value={inputSearcher}
+                onChange={setInputChange}
               />
               <button className="iconSearch">
                 <BsSearch className="svgSearch" />
@@ -18,10 +25,12 @@ const Header = () => {
             </div>
           </div>
           <div className="row ">
-            <div className="col-6">Share your experience with music</div>
+            <div className="col-6 tagName">
+              Share your experience with music
+            </div>
             <div className="col-6">
-              <div className="btnSignUp ms-3 mb-2">Sign up</div>
-              <div className="btnSignUp me-3 mb-2">Log in</div>
+              <div className="btnSignUp ms-3 mb-2 headerUser">Sign up</div>
+              <div className="btnSignUp me-3 mb-2 headerUser">Log in</div>
             </div>
           </div>
         </div>
