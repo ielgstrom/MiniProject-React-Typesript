@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
-const Header = () => {
+const Header: React.FC = () => {
   const [inputSearcher, setInputSearcher] = useState<string>("");
   const setInputChange = (e: React.FormEvent<HTMLInputElement>) => {
     setInputSearcher(e.currentTarget.value);
@@ -30,7 +31,11 @@ const Header = () => {
             </div>
             <div className="col-6">
               <div className="btnSignUp ms-3 mb-2 headerUser">Sign up</div>
-              <div className="btnSignUp me-3 mb-2 headerUser">Log in</div>
+              <div className="btnSignUp me-3 mb-2 headerUser">
+                <NavLink to="/login" className="text-dark text-decoration-none">
+                  Log in
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>
