@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 const Header: React.FC = () => {
   const [inputSearcher, setInputSearcher] = useState<string>("");
@@ -11,7 +11,11 @@ const Header: React.FC = () => {
       <header className="headerMain">
         <div className="container-fluid contenedor-header pt-3">
           <div className="row">
-            <h1 className="col-9">Shared</h1>
+            <h1 className="col-9">
+              <NavLink to="/" className="text-dark text-decoration-none">
+                Shared
+              </NavLink>
+            </h1>
             <div className="col-3 formSearch">
               <input
                 type="text"
