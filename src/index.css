@@ -16,7 +16,18 @@ body {
   padding-bottom: var(--height-footer);
   margin-bottom: 0;
 }
+.defaultLink {
+  color: black;
+  text-decoration: none;
+}
+.defaultLink:hover {
+  color: rgb(72, 72, 72);
+}
 /* BEGIN CONTENT HEADER */
+.tagName,
+.titleApp {
+  user-select: none;
+}
 .contenedor-header {
   max-width: var(--max-width-main);
   /* border: 1px solid rgb(255, 33, 33); */
@@ -160,7 +171,7 @@ body {
   justify-content: space-between;
 }
 .musicItem {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 0 3px;
   transition: opacity 0.09s ease-in-out;
   font-size: 0.9rem;
@@ -175,3 +186,11 @@ body {
 .musicItem .title {
   font-weight: 700;
 }
+/* BEGIN ALBUM */
+.centerContent {
+  max-width: var(--max-width-main);
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* END ALBUM */

@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Home from "./Pages/Home";
+import Album from "./Pages/Album";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/album/:albumIdentifier" element={<Album />} />
         </Routes>
       </BrowserRouter>
     </div>

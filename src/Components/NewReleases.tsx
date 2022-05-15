@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 interface NumerosTotales {
   numberItems: number;
 }
+interface AlbumStructure {
+  title: string;
+  artist: string;
+  urlImage?: string;
+  rating?: number;
+}
 const NewReleases = ({ numberItems }: NumerosTotales) => {
-  const [newMusic, setNewMusic] = useState([
+  const [newMusic, setNewMusic] = useState<AlbumStructure[]>([
     {
       title: "Titanic rising",
       artist: "Weyes Blood",
       urlImage:
-        "https://kubomusical.com/wp-content/uploads/2020/08/weyes-blood-titanic-rising.jpg",
+        "https://indiehoy.com/wp-content/uploads/2019/02/weyes-blood-640-1.jpg",
     },
     {
       title: "Pang",
@@ -45,13 +52,19 @@ const NewReleases = ({ numberItems }: NumerosTotales) => {
     <>
       <div className="contentainer-NewReleases">
         {newMusic.map((item) => (
-          <div className="musicItem" key={item.title}>
-            <img src={item.urlImage} alt="" />
-            <div className="row justify-content-between ms-0">
-              <small className="col-12 title">{item.title}</small>
-              <small className="col-12 artist">{item.artist}</small>
+          <NavLink
+            key={item.title}
+            className="defaultLink"
+            to={`album/${item.title}`}
+          >
+            <div className="musicItem">
+              <img src={item.urlImage} alt="" />
+              <div className="row justify-content-between ms-0">
+                <small className="col-12 title">{item.title}</small>
+                <small className="col-12 artist">{item.artist}</small>
+              </div>
             </div>
-          </div>
+          </NavLink>
         ))}
       </div>
     </>

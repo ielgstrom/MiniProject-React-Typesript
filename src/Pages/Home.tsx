@@ -8,6 +8,10 @@ const Home: React.FC = () => {
       <Header />
       <div className="contenidoCentral">
         <NewReleases numberItems={5} />
+        <NewReleases numberItems={4} />
+        <NewReleases numberItems={3} />
+        <NewReleases numberItems={2} />
+        <NewReleases numberItems={1} />
       </div>
       <Footer />
     </>

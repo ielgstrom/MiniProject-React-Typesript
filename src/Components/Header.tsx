@@ -12,7 +12,10 @@ const Header: React.FC = () => {
         <div className="container-fluid contenedor-header pt-3">
           <div className="row">
             <h1 className="col-9">
-              <NavLink to="/" className="text-dark text-decoration-none">
+              <NavLink
+                to="/"
+                className="text-dark titleApp text-decoration-none"
+              >
                 Shared
               </NavLink>
             </h1>
